@@ -1,5 +1,7 @@
 import 'package:app_example/utils/ui_theme.dart';
+import 'package:app_example/view/atoms/custom_loading.dart';
 import 'package:app_example/view/organisms/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashLoginTemplate extends StatefulWidget {
@@ -30,31 +32,31 @@ class _SplashLoginTemplateState extends State<SplashLoginTemplate> {
   @override
   build(_) => Scaffold(
       backgroundColor: _isSplashTime ? Colors.pinkAccent[700] : Colors.white,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Positioned(
-            top: _splashHeight,
-            child: AnimatedOpacity(
-              opacity: _isSplashTime ? 0 : 1,
-              duration: Duration(milliseconds: 1500),
-              child: Container(
-                height: UI.screenHeight - _splashHeight,
-                width: MediaQuery.of(_).size.width,
-                child: ListView(
-                  padding: EdgeInsets.all(12),
-                  children: widget.children,
-                ),
+      body: Stack(fit: StackFit.expand, children: [
+        Positioned(
+          top: _splashHeight,
+          child: AnimatedOpacity(
+            opacity: _isSplashTime ? 0 : 1,
+            duration: Duration(milliseconds: 1500),
+            child: Container(
+              height: UI.screenHeight - _splashHeight,
+              width: MediaQuery.of(_).size.width,
+              child: ListView(
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.all(12),
+                children: widget.children,
               ),
             ),
           ),
-          SplashScreen(
-            height: _splashHeight,
-            clipper: _Clipper(),
-            isSplashTime: _isSplashTime,
-          ),
-        ],
-      ));
+        ),
+        SplashScreen(
+          height: _splashHeight,
+          clipper: _Clipper(),
+          isSplashTime: _isSplashTime,
+        ),
+        // Container(color: Colors.grey[900]!.withOpacity(.75)),
+        // CustomLoading(),
+      ]));
 }
 
 class _Clipper extends CustomClipper<Path> {

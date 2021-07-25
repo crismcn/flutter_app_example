@@ -13,17 +13,18 @@ class UI {
   static ThemeData get globalTheme => ThemeData(
       unselectedWidgetColor: contrastColor,
       scaffoldBackgroundColor: Colors.pinkAccent[700],
+      accentColor: Colors.white,
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-        filled: true,
-        fillColor: contrastColor,
-        border: _border,
-        focusedBorder: _border,
-        enabledBorder: _border,
-        errorBorder: OutlineInputBorder(borderSide: _err),
-        errorStyle: TextStyle(color: errorColor),
-        focusedErrorBorder: _border,
-      ),
+          contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+          filled: true,
+          fillColor: contrastColor,
+          border: _border,
+          focusedBorder: _border,
+          enabledBorder: _border,
+          errorBorder: OutlineInputBorder(borderSide: _err),
+          errorStyle: TextStyle(color: errorColor),
+          focusedErrorBorder: _border,
+          labelStyle: TextStyle(color: Colors.grey[850])),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           backgroundColor: primaryColor,
