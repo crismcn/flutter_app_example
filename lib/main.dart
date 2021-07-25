@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
 import 'utils/ui_theme.dart';
-import 'view/pages/login_page.dart';
+import 'routers/login_module.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +10,7 @@ void main() {
   runApp(ModularApp(
       module: AppModule(),
       child: MaterialApp(
-        initialRoute: '/',
+        initialRoute: _initialRoute,
         theme: UI.globalTheme,
       ).modular()));
 }
@@ -20,6 +21,8 @@ class AppModule extends Module {
 
   @override
   get routes => [
-        ChildRoute(LoginPage.ROUTE, child: (_, args) => LoginPage()),
+        ModuleRoute(_initialRoute, module: LoginModule()),
       ];
 }
+
+String get _initialRoute => '/';

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomLoading extends StatelessWidget {
-  const CustomLoading({this.color = Colors.white});
+  const CustomLoading({this.color = Colors.white, this.shadow = false});
   final Color color;
+  final bool shadow;
 
   @override
   build(_) => Stack(alignment: Alignment.center, children: [
+        if (shadow) Container(color: Colors.grey[900]!.withOpacity(.75)),
         RotatedBox(
           quarterTurns: 1,
           child: SizedBox.fromSize(

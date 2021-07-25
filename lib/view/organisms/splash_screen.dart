@@ -9,11 +9,13 @@ class SplashScreen extends StatelessWidget {
   final double height;
   final CustomClipper<Path> clipper;
   final bool isSplashTime;
+  final bool isKeyboardActive;
 
   const SplashScreen({
     required this.height,
     required this.clipper,
     required this.isSplashTime,
+    this.isKeyboardActive = false,
   });
 
   @override
@@ -42,8 +44,9 @@ class SplashScreen extends StatelessWidget {
               children: [
                 SizedBox(height: height * .35),
                 Image.asset(ImagePaths.logoiconWhite),
-                Text('\n${UITexts.loginWelcomeTitle}',
-                    style: Theme.of(_).primaryTextTheme.headline1),
+                if (!isKeyboardActive)
+                  Text('\n${UITexts.loginWelcomeTitle}',
+                      style: Theme.of(_).primaryTextTheme.headline1),
               ],
             ),
           ),
