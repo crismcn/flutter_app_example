@@ -3,6 +3,8 @@ import 'package:app_example/view/pages/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginModule extends Module {
+  static const ROUTE = '/login';
+
   @override
   get binds => [
         Bind.singleton((i) => LoginFormStore()),
@@ -10,6 +12,6 @@ class LoginModule extends Module {
 
   @override
   get routes => [
-        ChildRoute(LoginPage.ROUTE, child: (_, args) => LoginPage()),
+        ChildRoute(Modular.initialRoute, child: (_, args) => LoginPage()),
       ];
 }
