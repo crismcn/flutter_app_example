@@ -8,7 +8,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginPage extends StatelessWidget {
-  static const ROUTE = '/';
   final _store = Modular.get<LoginFormStore>();
 
   @override
@@ -38,7 +37,7 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
                     child: TextButton(
-                      child: Text(UITexts.signinButton),
+                      child: Text(UITexts.signinButton.toUpperCase()),
                       onPressed: _store.formHandler,
                     ),
                   ),

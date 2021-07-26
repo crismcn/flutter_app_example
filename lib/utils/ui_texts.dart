@@ -6,6 +6,9 @@ class UITexts {
   static String get invalidPasswordValidatorText => 'Mínimo de 6 caracteres.';
   static String get loginWelcomeTitle => 'Seja bem-vindo ao empresas!';
   static String get passwordLabelText => 'Senha';
-  static String get signinButton => 'Entrar'.toUpperCase();
+  static String get searchForCompaniesHintText => 'Pesquise por empresa';
+  static String get totalFoundText => 'Resultados encontrados';
+  static String get signinButton => 'Entrar';
+
   UITexts._();
 }

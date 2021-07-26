@@ -1,4 +1,6 @@
+import 'package:app_example/routers/home_module.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
 part 'login_form_store.g.dart';
@@ -19,10 +21,9 @@ abstract class _LoginFormStoreBase with Store {
 
   Future<void> formHandler() async {
     startLoading();
-    print(loading);
     Future.delayed(Duration(seconds: 2), () {
       stopLoading();
-      print(loading);
+      Modular.to.navigate(HomeModule.ROUTE);
     });
   }
 }

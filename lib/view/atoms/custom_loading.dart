@@ -6,7 +6,9 @@ class CustomLoading extends StatelessWidget {
   final bool shadow;
 
   @override
-  build(_) => Stack(alignment: Alignment.center, children: [
+  build(_) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(_).viewInsets.bottom),
+      child: Stack(alignment: Alignment.center, children: [
         if (shadow) Container(color: Colors.grey[900]!.withOpacity(.75)),
         RotatedBox(
           quarterTurns: 1,
@@ -25,5 +27,5 @@ class CustomLoading extends StatelessWidget {
             valueColor: AlwaysStoppedAnimation<Color>(color),
           ),
         ),
-      ]);
+      ]));
 }

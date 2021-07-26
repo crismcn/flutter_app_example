@@ -22,6 +22,6 @@ class AppModule extends Module {
   @override
   get routes => [
         ModuleRoute(LoginModule.ROUTE, module: LoginModule()),
-        // ModuleRoute(HomeModule.ROUTE, module: HomeModule()),
+        ModuleRoute(HomeModule.ROUTE, module: HomeModule()),
       ];
 }
