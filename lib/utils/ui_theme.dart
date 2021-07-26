@@ -22,9 +22,7 @@ class UI {
         focusedBorder: _border,
         enabledBorder: _border,
         errorBorder: OutlineInputBorder(borderSide: _err),
-        errorStyle: TextStyle(
-          color: errorColor,
-        ),
+        errorStyle: TextStyle(color: errorColor),
         focusedErrorBorder: _border,
         labelStyle: TextStyle(color: Colors.grey[850]),
       ),
@@ -36,10 +34,15 @@ class UI {
         ),
       ),
       primaryTextTheme: TextTheme(
-        headline1: TextStyle(
-          fontSize: 20,
+        headline2: TextStyle(
+          fontSize: 18,
           color: Colors.white,
           fontWeight: FontWeight.normal,
+        ),
+        headline3: TextStyle(
+          fontSize: 14,
+          color: Colors.grey[850],
+          fontWeight: FontWeight.w300,
         ),
       ));
 

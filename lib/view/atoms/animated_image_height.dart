@@ -18,9 +18,10 @@ class AnimatedImageHeight extends StatelessWidget {
         height: height,
         curve: curve,
         duration: duration,
+        width: MediaQuery.of(_).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image: AssetImage(imagePath),
           ),
         ),

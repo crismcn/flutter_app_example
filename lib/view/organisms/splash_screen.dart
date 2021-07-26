@@ -35,7 +35,10 @@ class SplashScreen extends StatelessWidget {
             ),
           ),
           if (isSplashTime)
-            Center(child: Image.asset(ImagePaths.logotypeWhite)),
+            Center(
+              child: Image.asset(ImagePaths.logotypeWhite,
+                  width: MediaQuery.of(_).size.width * .5, fit: BoxFit.contain),
+            ),
           Positioned(
             top: 0,
             child: AnimatedVisibilityColumn(
@@ -43,10 +46,11 @@ class SplashScreen extends StatelessWidget {
               duration: Duration(milliseconds: 500),
               children: [
                 SizedBox(height: height * .35),
-                Image.asset(ImagePaths.logoiconWhite),
+                Image.asset(ImagePaths.logoiconWhite,
+                    width: 48, fit: BoxFit.contain),
                 if (!isKeyboardActive)
                   Text('\n${UITexts.loginWelcomeTitle}',
-                      style: Theme.of(_).primaryTextTheme.headline1),
+                      style: Theme.of(_).primaryTextTheme.headline2),
               ],
             ),
           ),
