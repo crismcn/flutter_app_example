@@ -12,7 +12,7 @@ class HomeTemplate extends StatefulWidget {
   });
   final int? result;
   final TextField searchBar;
-  final ListView list;
+  final Widget list;
 
   @override
   _HomeTemplateState createState() => _HomeTemplateState();
