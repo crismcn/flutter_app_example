@@ -1,3 +1,5 @@
+import 'package:app_example/services/httpclient.service.dart';
+import 'package:app_example/utils/api_consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -17,7 +19,9 @@ void main() {
 
 class AppModule extends Module {
   @override
-  get binds => [];
+  get binds => [
+        Bind.singleton((i) => HTTPClientService(baseUrl: API.BASE_URL)),
+      ];
 
   @override
   get routes => [
