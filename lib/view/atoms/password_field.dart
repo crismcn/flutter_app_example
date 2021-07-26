@@ -6,17 +6,21 @@ class PasswordField extends StatefulWidget {
   final String? Function(String?)? validator;
 
   const PasswordField({
+    Key? key,
     this.controller,
     this.labelText = '',
     this.validator,
-  });
+  }) : super(key: key);
 
   @override
-  _PasswordFieldState createState() => _PasswordFieldState();
+  PasswordFieldState createState() => PasswordFieldState();
 }
 
-class _PasswordFieldState extends State<PasswordField> {
+class PasswordFieldState extends State<PasswordField> {
   bool _hidePassword = true;
+  String? error;
+
+  updateError(String? err) => setState(() => error = err);
 
   @override
   build(_) => TextFormField(
@@ -25,6 +29,7 @@ class _PasswordFieldState extends State<PasswordField> {
       keyboardType: TextInputType.number,
       obscureText: _hidePassword,
       decoration: InputDecoration(
+        errorText: error,
         labelText: widget.labelText,
         suffixIcon: IconButton(
           onPressed: _toggleHidePassword,

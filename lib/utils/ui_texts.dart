@@ -9,6 +9,8 @@ class UITexts {
   static String get searchForCompaniesHintText => 'Pesquise por empresa';
   static String get totalFoundText => 'Resultados encontrados';
   static String get signinButton => 'Entrar';
+  static String get invalidCredentials => 'Credenciais incorretas';
+  static String get somethingGoWrong => 'Erro, tente novamente mais tarde';
 
   UITexts._();
 }

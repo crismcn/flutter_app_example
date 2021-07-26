@@ -44,6 +44,11 @@ class UI {
           color: Colors.grey[850],
           fontWeight: FontWeight.w300,
         ),
+        headline4: TextStyle(
+          fontSize: 18,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
       ));
 
   static BorderSide get _bs => BorderSide.none;

@@ -30,6 +30,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   PasswordField(
+                    key: _store.passwordFieldState,
                     controller: _store.passwordTextController,
                     labelText: UITexts.passwordLabelText,
                     validator: InputValidators.passwordIsValid,
